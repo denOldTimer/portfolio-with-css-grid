@@ -1,0 +1,55 @@
+/* ALL FOR THE WELCOME */
+@use 'abstracts/mixins' as mix;
+
+.welcome {
+  background-image: url(../../img/header-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  place-content: center;
+  text-align: center;
+  height: 100vh;
+  .welcome__text {
+    @include mix.serif($fs: 1.25rem);
+  }
+  .welcome__title {
+    @include mix.sans-serif($fs: 5rem, $lh: 1.1);
+  }
+
+  @include mix.mq {
+    .welcome__text {
+      @include mix.serif($fs: 2rem);
+    }
+    .welcome__title {
+      @include mix.sans-serif($fs: 9rem, $lh: 1.1);
+    }
+  }
+
+  @include mix.mq($width: 80em) {
+    .welcome__text {
+      @include mix.serif($fs: 3rem);
+    }
+    .welcome__title {
+      @include mix.sans-serif($fs: 12rem, $lh: 1.1);
+    }
+  }
+
+  .welcome__text::before,
+  .welcome__title::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 50%;
+    background-color: hsla(var(--clr-brand), 50%, 50%, 0.07);
+  }
+
+  .welcome__text::before {
+    margin: 0 auto 5rem;
+  }
+  .welcome__title::after {
+    margin: 5rem auto 0;
+  }
+}

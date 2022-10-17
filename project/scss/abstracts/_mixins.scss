@@ -1,0 +1,52 @@
+/*  ALL FOR MIXINS */
+
+/* mixin sans-serif
+* @param $fs  font-size
+* @param $ls  color             -default : --accent
+* @param $ls  letter-spacing    -default : --ls
+* @param $lh  line-height       -default : --lh
+* @param $tt  text-transform    -default : uppercase
+*/
+@mixin sans-serif($fs, $clr: var(--accent), $ls: var(--ls), $lh: var(--lh-1), $tt: uppercase) {
+  font-family: var(--ff-ss);
+  font-weight: var(--fw-n);
+  font-size: $fs;
+  color: $clr;
+  letter-spacing: $ls;
+  line-height: $lh;
+  text-transform: $tt;
+  margin-right: calc(var(--ls) * -1);
+}
+
+/* mixin serif
+* @param $fs  font-size
+* @param $ls  color             -default : --text1
+* @param $ls  letter-spacing    -default : --ls
+* @param $lh  line-height       -default : --lh
+* @param $fw  font-weight       -default : --fw-n
+*/
+@mixin serif($fs, $clr: var(--text1), $ls: var(--ls), $lh: var(--lh-1), $fw: var(--fw-n)) {
+  font-family: var(--ff-s);
+  font-weight: $fw;
+  font-size: $fs;
+  color: $clr;
+  letter-spacing: $ls;
+  line-height: $lh;
+  margin-right: calc(var(--ls) * -1);
+}
+
+/* mixin serif
+* @param $width  -default : 50em
+*
+*/
+@mixin mq($width: 50em) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin container($width: 90%, $max-width: 50em) {
+  width: $width;
+  margin: 0 auto;
+  max-width: $max-width;
+}

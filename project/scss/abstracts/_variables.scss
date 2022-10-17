@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Six+Caps&display=swap');
+
+:root {
+  --ff-s: 'Merriweather', serif;
+  --ff-ss: 'Six Caps', sans-serif;
+
+  --fw-n: 400;
+  --fw-b: 900;
+
+  /*1rem = 16px => 14px = 14/16 = 0.75rem*/
+  --fs-900: 6rem; /*96px*/
+  --fs-800: 4rem; /*64px*/
+  --fs-700: 3rem; /*48px*/
+  --fs-600: 2rem; /*32px*/
+  --fs-500: 1.5rem; /*24px*/
+  --fs-400: 1rem; /*16px*/
+  --fs-300: 0.875rem; /*14px*/
+  --fs-200: 0.75rem; /*12px*/
+  --fs-100: 0.5rem; /*8px*/
+
+  --ls: 0.15em;
+  --lh-1: 1;
+  --lh-2: 2;
+
+  --clr-white: hsl(0, 0%, 97%);
+  --clr-boston: hsl(215, 50%, 50%);
+  --clr-crimson: hsl(0 50% 50%);
+
+  --hue-brand: 215;
+  --hue-accent: 0;
+
+  --brand: hsl(var(--hue-brand) 50% 50%);
+  --accent: hsl(var(--hue-accent) 50% 50%);
+  --text1: hsl(var(--hue-brand) 50% 10%);
+  --text2: hsl(var(--hue-brand) 30% 35%);
+  --text3: hsl(var(--hue-accent) 30% 80%);
+  --surface1: hsl(var(--hue-brand) 55% 60%);
+  --surface2: hsl(var(--hue-brand) 50% 79%);
+  --surface3: hsl(var(--hue-brand) 50% 72%);
+  --surface4: hsl(var(--hue-brand) 50% 65%);
+  --surface5: hsl(var(--hue-accent) 0% 96%);
+}

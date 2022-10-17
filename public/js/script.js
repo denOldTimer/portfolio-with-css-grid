@@ -1,0 +1,2 @@
+const toggleBtn=document.querySelector(".icon"),nav=document.querySelector("nav"),menu=document.querySelector(".menu");toggleBtn.addEventListener("click",(()=>{nav.style.transition="transform 250ms ease-in-out",document.body.classList.toggle("nav-is-open")})),menu.addEventListener("click",(()=>{nav.style.transition="0ms",document.body.classList.remove("nav-is-open")}));
+//# sourceMappingURL=script.js.map

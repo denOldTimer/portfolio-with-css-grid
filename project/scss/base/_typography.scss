@@ -1,0 +1,35 @@
+@use 'abstracts/mixins' as mix;
+
+body {
+  font-family: var(--ff-s);
+  font-size: var(--fs-300);
+  line-height: 1.6;
+
+  @include mix.mq {
+    font-size: var(--fs-400);
+  }
+  @include mix.mq($width: 80em) {
+    font-size: var(--fs-500);
+  }
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  @include mix.serif($fs: 2.5rem, $clr: var(--clr-accent), $fw: var(--fw-b), $ls: 0);
+  @include mix.mq {
+    @include mix.serif($fs: 4.25rem, $clr: var(--clr-accent), $fw: var(--fw-b), $ls: 0);
+  }
+}
+
+h2 {
+  @include mix.sans-serif($fs: 2rem);
+  @include mix.mq {
+    @include mix.sans-serif($fs: 3rem);
+  }
+}

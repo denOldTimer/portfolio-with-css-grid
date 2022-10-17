@@ -1,0 +1,82 @@
+/* ALL FOR PORTFOLIO */
+
+@use 'abstracts/mixins' as mix;
+
+.portfolio {
+  background-color: var(surface2);
+  text-align: center;
+  margin: 3em auto;
+  width: auto;
+  h1 {
+    color: var(--accent);
+  }
+
+  .portfolio__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include mix.mq {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .featured {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+    }
+
+    .portfolio__item {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      figcaption {
+        position: absolute;
+        top: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: flex-end;
+        color: var(--text3);
+        background-color: hsla(var(--hue-brand) 50% 50% / 0.6);
+        overflow: hidden;
+
+        .portfolio__title {
+          color: var(--text3);
+        }
+        .portfolio__desc {
+          display: none;
+          @include mix.mq {
+            display: block;
+          }
+        }
+        .portfolio__link {
+          color: var(--text3);
+          font-weight: var(--fw-b);
+          font-size: var(--fs-400);
+          text-decoration: none;
+          border-bottom: 3xp solid var(--text3);
+
+          &::after {
+            content: url(../../img/arrow-white.svg);
+            display: inline-block;
+            height: 0.8em;
+            width: 0.8em;
+            margin-left: 0.25em;
+          }
+        }
+      }
+      &:hover figcaption,
+      &:focus figcaption {
+        top: 0;
+      }
+    }
+  }
+}

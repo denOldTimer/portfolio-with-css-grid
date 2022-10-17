@@ -1,0 +1,70 @@
+#theme {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .surface {
+    display: grid;
+    grid-template-areas:
+      ' one   two'
+      ' three four';
+    gap: 1rem;
+
+    width: 400px;
+    height: 400px;
+    font-size: 2rem;
+  }
+
+  .surface1 {
+    grid-area: one;
+  }
+  .surface2 {
+    grid-area: two;
+  }
+  .surface3 {
+    grid-area: three;
+  }
+  .surface4 {
+    grid-area: four;
+  }
+
+  .surface1,
+  .surface2,
+  .surface3,
+  .surface4 {
+    text-align: center;
+    padding: 2em;
+  }
+
+  .swatches {
+    background-color: var(surface2);
+  }
+  .swatch {
+    display: inline-block;
+    flex-shrink: 0;
+    inline-size: 1.5ch;
+    block-size: 1.5ch;
+    border-radius: 50%;
+
+    &.text1 {
+      background-color: var(--text1);
+    }
+    &.text2 {
+      background-color: var(--text2);
+    }
+    &.text3 {
+      background-color: var(--text3);
+    }
+    &.text-brand {
+      background-color: var(--brand);
+    }
+    &.text-accent {
+      background-color: var(--accent);
+    }
+  }
+
+  .text {
+    max-width: 35ch;
+  }
+}

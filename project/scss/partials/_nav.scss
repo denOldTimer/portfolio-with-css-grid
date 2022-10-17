@@ -1,0 +1,80 @@
+@use 'abstracts/mixins' as mix;
+
+nav {
+  position: fixed;
+  top: 0;
+  left: -80%;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+
+  z-index: 9999;
+  display: grid;
+  column-gap: 1em;
+  grid-template-columns: 1fr 20%;
+  grid-template-areas: 'menu icon';
+  .icon {
+    grid-area: icon;
+  }
+  .menu {
+    grid-area: menu;
+  }
+
+  .icon {
+    background-color: transparent;
+    border: none;
+    margin-left: 1em;
+    height: 3em;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  .close-icon {
+    display: none;
+  }
+
+  .menu {
+    margin: 0;
+    padding: 0;
+    background-color: var(--surface4);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    width: auto;
+    @include mix.sans-serif($fs: var(--fs-800), $lh: 1.4);
+
+    li {
+      width: 100%;
+      justify-self: stretch;
+      padding-block: 3rem;
+      border-bottom: 1px solid var(--accent);
+
+      a {
+        margin: 0;
+        display: inline-block;
+        text-decoration: none;
+        justify-self: stretch;
+        width: 100%;
+        color: var(--accent);
+      }
+
+      &:hover {
+        background-color: var(--surface1);
+      }
+    }
+  }
+}
+.nav-is-open {
+  nav {
+    left: 0;
+  }
+  .hamburger {
+    display: none;
+  }
+  .close-icon {
+    display: block;
+  }
+}
