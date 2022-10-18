@@ -47,5 +47,13 @@ portfolioContainer.addEventListener("click", (e) => {
     modal.addEventListener("animationend", modalClose);
   });
 
+  //The esc-key abort functionality
+  document.addEventListener("keydown", (e) => {
+    console.log(e.key);
+    if (!e.key === "Escape") return;
+    modal.style.animation = "modalFadeOUT 500ms forwards";
+    modal.addEventListener("animationend", modalClose);
+  });
+
   modalOpen();
 });
