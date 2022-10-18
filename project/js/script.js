@@ -33,11 +33,13 @@ portfolioContainer.addEventListener("click", (e) => {
   const modalOpen = (_) => {
     modal.style.visibility = "visible";
     modal.style.animation = "modalFadeIN 500ms forwards";
+    document.body.style.overflowY = "hidden";
   };
 
   const modalClose = (_) => {
     //modal.style.visibility = "hidden";
     modal.removeEventListener("animationend", modalClose);
+    document.body.style.overflowY = "scroll";
   };
 
   const closeBtn = modal.firstElementChild;
