@@ -30,11 +30,11 @@ portfolioContainer.addEventListener("click", (e) => {
   const modal = document.getElementById(modalId);
   if (!modal) return;
   modal.style.display = "block";
-});
 
-const closeBtn = document.querySelector(".modal__btn-close");
-console.log(closeBtn);
-closeBtn.addEventListener("click", () => {
-  const modal = closeBtn.parentNode;
-  modal.style.display = "none";
+  const closeBtn = modal.firstElementChild;
+  console.log(closeBtn);
+  closeBtn.addEventListener("click", () => {
+    const modal = closeBtn.parentNode;
+    modal.style.display = "none";
+  });
 });
