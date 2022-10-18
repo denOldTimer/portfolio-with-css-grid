@@ -29,12 +29,23 @@ portfolioContainer.addEventListener("click", (e) => {
   if (modalId === "") return;
   const modal = document.getElementById(modalId);
   if (!modal) return;
-  modal.style.display = "block";
+
+  const modalOpen = (_) => {
+    modal.style.visibility = "visible";
+    modal.style.animation = "modalFadeIN 500ms forwards";
+  };
+
+  const modalClose = (_) => {
+    //modal.style.visibility = "hidden";
+    modal.removeEventListener("animationend", modalClose);
+  };
 
   const closeBtn = modal.firstElementChild;
-  console.log(closeBtn);
+
   closeBtn.addEventListener("click", () => {
-    const modal = closeBtn.parentNode;
-    modal.style.display = "none";
+    modal.style.animation = "modalFadeOUT 500ms forwards";
+    modal.addEventListener("animationend", modalClose);
   });
+
+  modalOpen();
 });

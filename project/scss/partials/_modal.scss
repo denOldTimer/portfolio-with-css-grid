@@ -12,7 +12,8 @@
   box-shadow: 0 0 1em 2em rgba(black, 0.5);
   overflow-y: scroll;
   overflow-x: hidden;
-  display: none;
+  display: block;
+  visibility: hidden;
 
   .modal__btn-close {
     position: fixed;
@@ -94,5 +95,37 @@
       margin-left: 2em;
       padding-block: 1em;
     }
+  }
+
+  .modal-open {
+    visibility: visible;
+  }
+}
+
+@keyframes modalFadeIN {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes modalFadeOUT {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
