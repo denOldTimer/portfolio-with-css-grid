@@ -12,3 +12,29 @@ menu.addEventListener("click", () => {
   nav.style.transition = "0ms";
   document.body.classList.remove("nav-is-open");
 });
+
+//NOTE: ---- MODAL FUNCTIONALITY
+
+const portfolioContainer = document.querySelector(".portfolio__items");
+portfolioContainer.addEventListener("click", (e) => {
+  //console.log(e);
+  e.preventDefault();
+
+  const modalToggle = e.target.closest(".portfolio__link");
+  //console.log(modalToggle);
+  if (!modalToggle) return;
+
+  const modalId = modalToggle.target;
+  //console.log(modalId);
+  if (modalId === "") return;
+  const modal = document.getElementById(modalId);
+  if (!modal) return;
+  modal.style.display = "block";
+});
+
+const closeBtn = document.querySelector(".modal__btn-close");
+console.log(closeBtn);
+closeBtn.addEventListener("click", () => {
+  const modal = closeBtn.parentNode;
+  modal.style.display = "none";
+});

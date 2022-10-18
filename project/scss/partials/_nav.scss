@@ -8,10 +8,10 @@ nav {
   right: 0;
   width: 100%;
 
-  z-index: 9999;
+  z-index: 10;
   display: grid;
-  column-gap: 1em;
-  grid-template-columns: 1fr 20%;
+  column-gap: 2%;
+  grid-template-columns: 78% 20%;
   grid-template-areas: 'menu icon';
   .icon {
     grid-area: icon;
@@ -23,7 +23,7 @@ nav {
   .icon {
     background-color: transparent;
     border: none;
-    margin-left: 1em;
+    margin-left: 2em;
     height: 3em;
   }
 

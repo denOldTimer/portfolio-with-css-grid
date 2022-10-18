@@ -1,0 +1,98 @@
+/* ALL FOR THE MODAL */
+@use 'abstracts/mixins' as mix;
+
+.modal {
+  position: fixed;
+  top: 2em;
+  bottom: 2em;
+  left: 2em;
+  right: 2em;
+  z-index: 25;
+  background-color: var(--surface2);
+  box-shadow: 0 0 1em 2em rgba(black, 0.5);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: none;
+
+  .modal__btn-close {
+    position: fixed;
+    background-color: var(--surface5);
+    left: 1em;
+    top: 1em;
+    border: 0;
+    border-radius: 50%;
+    height: 2em;
+    width: 2em;
+    padding: 3px 0 0;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(black, 0.5);
+  }
+
+  .modal__header {
+    padding: 5em 0;
+    margin-bottom: 2em;
+  }
+
+  .modal__header:nth-of-type(1) {
+    background-image: url(../../img/portfolio-01.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .modal__titlebox {
+    padding: 3em 0 3em 3em;
+    color: var(--text3);
+    background-color: hsla(var(--hue-brand) 50% 50% / 0.6);
+    width: 80%;
+
+    .modal__title {
+      display: inline-block;
+      &::after {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: var(--text3);
+        width: 100%;
+        margin: 0.5em auto;
+      }
+    }
+  }
+
+  .modal__content {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2em;
+    padding-bottom: 2em;
+  }
+
+  .modal__img_full {
+    width: 100vw;
+    max-width: initial;
+    margin: 0 calc(50% - 50vw);
+    height: 20vh;
+    object-fit: cover;
+  }
+  .modal__img_left {
+    display: block;
+    max-width: 100%;
+
+    @include mix.mq {
+      width: 50%;
+      float: left;
+      margin-right: 2em;
+      padding-block: 1em;
+    }
+  }
+  .modal__img_right {
+    display: block;
+    max-width: 100%;
+
+    @include mix.mq {
+      width: 50%;
+      float: right;
+      margin-left: 2em;
+      padding-block: 1em;
+    }
+  }
+}
